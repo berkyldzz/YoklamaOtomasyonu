@@ -1,0 +1,17 @@
+E:\Senkron\GitHub\V2\bin\Debug\V2.exe.config
+E:\Senkron\GitHub\V2\bin\Debug\V2.exe
+E:\Senkron\GitHub\V2\bin\Debug\V2.pdb
+E:\Senkron\GitHub\V2\obj\Debug\V2.csproj.AssemblyReference.cache
+E:\Senkron\GitHub\V2\obj\Debug\V2.Properties.Resources.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.csproj.GenerateResource.cache
+E:\Senkron\GitHub\V2\obj\Debug\V2.csproj.CoreCompileInputs.cache
+E:\Senkron\GitHub\V2\obj\Debug\V2.exe
+E:\Senkron\GitHub\V2\obj\Debug\V2.pdb
+E:\Senkron\GitHub\V2\obj\Debug\V2.GirisEkrani.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.AnaEkran.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.DersEkle.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.SifreYenile.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.DevamsizlikDurumu.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.YoklamaEkrani.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.Dogrulama.resources
+E:\Senkron\GitHub\V2\obj\Debug\V2.Dogrulama2.resources
