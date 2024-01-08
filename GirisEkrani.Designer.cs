@@ -136,7 +136,7 @@
             // 
             this.YoklamaDurumu.BackColor = System.Drawing.Color.SaddleBrown;
             this.YoklamaDurumu.ForeColor = System.Drawing.Color.White;
-            this.YoklamaDurumu.Location = new System.Drawing.Point(185, 450);
+            this.YoklamaDurumu.Location = new System.Drawing.Point(186, 450);
             this.YoklamaDurumu.Name = "YoklamaDurumu";
             this.YoklamaDurumu.Size = new System.Drawing.Size(140, 80);
             this.YoklamaDurumu.TabIndex = 17;

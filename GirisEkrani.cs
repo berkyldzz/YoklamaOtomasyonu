@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace YoklamaOtomasyonu
@@ -16,6 +15,7 @@ namespace YoklamaOtomasyonu
         SifreYenile sifreyenile;
         public static YoklamaEkrani yoklamaekrani;
         DataTable VTDersler;
+        YoklamaDurumu_YoneticiPaneli_ yoklamadurumu;
 
         public GirisEkrani()
         {
@@ -93,6 +93,39 @@ namespace YoklamaOtomasyonu
 
         }
 
+        private void YoklamaDurumu_Click(object sender, EventArgs e)
+        {
+            ders = Dersler.Text;
+
+            if (Dersler.Text == "" || Parola.Text == "")
+            {
+                MessageBox.Show("Lütfen Gerekli Yerleri Doldurunuz !", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                OleDbCommand komut = new OleDbCommand($"SELECT * FROM GörevliBilgileri Where Parola='{Parola.Text}' and DersAdı='{ders}'", veritabani);
+                OleDbDataReader oku = komut.ExecuteReader();
+
+                if (oku.Read())
+                {
+                    if (yoklamadurumu == null)
+                    {
+                        yoklamadurumu = new YoklamaDurumu_YoneticiPaneli_();
+                        yoklamadurumu.TopLevel = false;
+                        anaekran.AnaPanel.Controls.Add(yoklamadurumu);
+                    }
+                    Parola.Clear();
+                    this.Hide();
+                    yoklamadurumu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Hatalı Parola!\nTekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Parola.Clear();
+                }
+            }
+        }
+
         private void ParolaGizle_Click(object sender, EventArgs e)
         {
             if (Parola.UseSystemPasswordChar == false)
@@ -131,9 +164,5 @@ namespace YoklamaOtomasyonu
             }
         }
 
-        private void YoklamaDurumu_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace YoklamaOtomasyonu

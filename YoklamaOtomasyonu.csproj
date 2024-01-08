@@ -76,6 +76,24 @@
     <Compile Include="Dogrulama2.Designer.cs">
       <DependentUpon>Dogrulama2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiltreAdSoyad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltreAdSoyad.Designer.cs">
+      <DependentUpon>FiltreAdSoyad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiltreDevamsizlık.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltreDevamsizlık.Designer.cs">
+      <DependentUpon>FiltreDevamsizlık.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiltreOgrenciNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltreOgrenciNo.Designer.cs">
+      <DependentUpon>FiltreOgrenciNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GirisEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +107,12 @@
     </Compile>
     <Compile Include="SifreYenile.Designer.cs">
       <DependentUpon>SifreYenile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YoklamaDurumu%28YoneticiPaneli%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YoklamaDurumu%28YoneticiPaneli%29.Designer.cs">
+      <DependentUpon>YoklamaDurumu%28YoneticiPaneli%29.cs</DependentUpon>
     </Compile>
     <Compile Include="YoklamaEkrani.cs">
       <SubType>Form</SubType>
@@ -111,6 +135,15 @@
     <EmbeddedResource Include="Dogrulama2.resx">
       <DependentUpon>Dogrulama2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FiltreAdSoyad.resx">
+      <DependentUpon>FiltreAdSoyad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltreDevamsizlık.resx">
+      <DependentUpon>FiltreDevamsizlık.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltreOgrenciNo.resx">
+      <DependentUpon>FiltreOgrenciNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GirisEkrani.resx">
       <DependentUpon>GirisEkrani.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="SifreYenile.resx">
       <DependentUpon>SifreYenile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YoklamaDurumu%28YoneticiPaneli%29.resx">
+      <DependentUpon>YoklamaDurumu%28YoneticiPaneli%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YoklamaEkrani.resx">
       <DependentUpon>YoklamaEkrani.cs</DependentUpon>
@@ -159,6 +195,7 @@
     <None Include="Resources\graduated %281%29.png" />
     <None Include="Resources\graduated.png" />
     <None Include="Resources\ok.png" />
+    <None Include="Resources\kepgorsel.jpg" />
     <Content Include="Resources\openneye.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

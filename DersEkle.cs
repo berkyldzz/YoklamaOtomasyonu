@@ -130,6 +130,11 @@ namespace YoklamaOtomasyonu
         
         private void GeriDon_Click(object sender, EventArgs e)
         {
+            DersAdi.Clear();
+            Devamsizlik.Clear();
+            YoneticiParola.Clear();
+            YoklamaParola.Clear();
+
             if (girisekrani == null)
             {
                 girisekrani = new GirisEkrani();

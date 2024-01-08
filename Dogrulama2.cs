@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace YoklamaOtomasyonu
@@ -14,6 +9,7 @@ namespace YoklamaOtomasyonu
     public partial class Dogrulama2 : Form
     {
         readonly OleDbConnection veritabani = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\YoklamaDatabase.accdb;Jet OLEDB:Database Password=232323;");
+        YoklamaEkrani yoklamaekrani;
 
         public Dogrulama2()
         {
@@ -35,6 +31,14 @@ namespace YoklamaOtomasyonu
         }
 
         private void GeriDon_Click(object sender, EventArgs e)
+        {
+            yoklamaekrani = Application.OpenForms.OfType<YoklamaEkrani>().FirstOrDefault();
+
+            this.Hide();
+            yoklamaekrani.Show();
+        }
+
+        private void YoklamayiBitir_Click(object sender, EventArgs e)
         {
             if (veritabani.State == ConnectionState.Closed)
             {
@@ -61,6 +65,5 @@ namespace YoklamaOtomasyonu
                 }
             }
         }
-
     }
 }
