@@ -35,4 +35,9 @@ E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.pdb
 E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.YoklamaDurumu_YoneticiPaneli_.resources
 E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.FiltreAdSoyad.resources
 E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.FiltreOgrenciNo.resources
-E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.FiltreDevamsizlık.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.OgrenciEkleCikar.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.BirDerseOgrenciEkle.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.FiltreDevamsizlik.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.BirDerstenOgrenciCikar.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.TumDerslereOgrenciEkle.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.TumDerslerdenCikar.resources

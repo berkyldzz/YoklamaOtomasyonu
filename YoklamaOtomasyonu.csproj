@@ -52,6 +52,18 @@
     <Compile Include="AnaEkran.Designer.cs">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </Compile>
+    <Compile Include="BirDerseOgrenciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BirDerseOgrenciEkle.Designer.cs">
+      <DependentUpon>BirDerseOgrenciEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BirDerstenOgrenciCikar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BirDerstenOgrenciCikar.Designer.cs">
+      <DependentUpon>BirDerstenOgrenciCikar.cs</DependentUpon>
+    </Compile>
     <Compile Include="DersEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,11 +94,11 @@
     <Compile Include="FiltreAdSoyad.Designer.cs">
       <DependentUpon>FiltreAdSoyad.cs</DependentUpon>
     </Compile>
-    <Compile Include="FiltreDevamsizlık.cs">
+    <Compile Include="FiltreDevamsizlik.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FiltreDevamsizlık.Designer.cs">
-      <DependentUpon>FiltreDevamsizlık.cs</DependentUpon>
+    <Compile Include="FiltreDevamsizlik.Designer.cs">
+      <DependentUpon>FiltreDevamsizlik.cs</DependentUpon>
     </Compile>
     <Compile Include="FiltreOgrenciNo.cs">
       <SubType>Form</SubType>
@@ -100,6 +112,12 @@
     <Compile Include="GirisEkrani.Designer.cs">
       <DependentUpon>GirisEkrani.cs</DependentUpon>
     </Compile>
+    <Compile Include="OgrenciEkleCikar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciEkleCikar.Designer.cs">
+      <DependentUpon>OgrenciEkleCikar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SifreYenile.cs">
@@ -107,6 +125,18 @@
     </Compile>
     <Compile Include="SifreYenile.Designer.cs">
       <DependentUpon>SifreYenile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TumDerslerdenCikar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TumDerslerdenCikar.Designer.cs">
+      <DependentUpon>TumDerslerdenCikar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TumDerslereOgrenciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TumDerslereOgrenciEkle.Designer.cs">
+      <DependentUpon>TumDerslereOgrenciEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="YoklamaDurumu%28YoneticiPaneli%29.cs">
       <SubType>Form</SubType>
@@ -123,6 +153,12 @@
     <EmbeddedResource Include="AnaEkran.resx">
       <DependentUpon>AnaEkran.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BirDerseOgrenciEkle.resx">
+      <DependentUpon>BirDerseOgrenciEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BirDerstenOgrenciCikar.resx">
+      <DependentUpon>BirDerstenOgrenciCikar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DersEkle.resx">
       <DependentUpon>DersEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,14 +174,17 @@
     <EmbeddedResource Include="FiltreAdSoyad.resx">
       <DependentUpon>FiltreAdSoyad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FiltreDevamsizlık.resx">
-      <DependentUpon>FiltreDevamsizlık.cs</DependentUpon>
+    <EmbeddedResource Include="FiltreDevamsizlik.resx">
+      <DependentUpon>FiltreDevamsizlik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FiltreOgrenciNo.resx">
       <DependentUpon>FiltreOgrenciNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GirisEkrani.resx">
       <DependentUpon>GirisEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciEkleCikar.resx">
+      <DependentUpon>OgrenciEkleCikar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -159,6 +198,12 @@
     </Compile>
     <EmbeddedResource Include="SifreYenile.resx">
       <DependentUpon>SifreYenile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TumDerslerdenCikar.resx">
+      <DependentUpon>TumDerslerdenCikar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TumDerslereOgrenciEkle.resx">
+      <DependentUpon>TumDerslereOgrenciEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YoklamaDurumu%28YoneticiPaneli%29.resx">
       <DependentUpon>YoklamaDurumu%28YoneticiPaneli%29.cs</DependentUpon>

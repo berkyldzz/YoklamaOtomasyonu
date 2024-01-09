@@ -7,10 +7,11 @@ namespace YoklamaOtomasyonu
 {
     public partial class AnaEkran : Form
     {
-        DialogResult cevap;
         Dogrulama2 dogrulama2;
         GirisEkrani girisekrani;
         YoklamaEkrani yoklamaekrani;
+        DevamsizlikDurumu devamdurumu;
+        Dogrulama dogrulama;
         private bool surukleniyor = false;
         private Point surukleBaslangicNoktasi;
 
@@ -35,6 +36,11 @@ namespace YoklamaOtomasyonu
         {
             yoklamaekrani = Application.OpenForms.OfType<YoklamaEkrani>().FirstOrDefault();
 
+            if (dogrulama!=null && dogrulama.Visible == true)
+            {
+                dogrulama.Visible = false;
+            }
+
             if ( yoklamaekrani == null )
             {
                 Application.Exit();
@@ -46,6 +52,17 @@ namespace YoklamaOtomasyonu
             else
             {
                 dogrulama2=Application.OpenForms.OfType<Dogrulama2>().FirstOrDefault();
+                devamdurumu=Application.OpenForms.OfType<DevamsizlikDurumu>().FirstOrDefault();
+
+                if( devamdurumu != null && devamdurumu.Visible == true)
+                {
+                    devamdurumu.Visible = false;
+                }
+
+                if (dogrulama != null && dogrulama.Visible == true)
+                {
+                    dogrulama.Visible = false;
+                }
 
                 if (dogrulama2 == null)
                 {
@@ -53,8 +70,6 @@ namespace YoklamaOtomasyonu
                     dogrulama2.TopLevel = false;
                     yoklamaekrani.panel2.Controls.Add(dogrulama2);
                 }
-                    yoklamaekrani.Hide();
-                    yoklamaekrani.Show() ;
                     dogrulama2.Show();
             }                
         }
@@ -84,12 +99,5 @@ namespace YoklamaOtomasyonu
                 surukleniyor = false;
             }
         }
-
-       
-           
-
-
-        
-
     }
 }

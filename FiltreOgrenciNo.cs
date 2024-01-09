@@ -21,10 +21,17 @@ namespace YoklamaOtomasyonu
         private void Filtrele_Click(object sender, EventArgs e)
         {
             yoklamadurum = Application.OpenForms.OfType<YoklamaDurumu_YoneticiPaneli_>().FirstOrDefault();
-            try 
+
+            if (altsinir.Text == "") { altsinir.Text = "0"; }
+
+            try
             {
                 yoklamadurum.Filtrele(Convert.ToInt32(altsinir.Text), Convert.ToInt32(ustsinir.Text));
-            }catch(FormatException)
+                altsinir.Clear();
+                ustsinir.Clear();
+
+            }
+            catch(FormatException)
             {
                 MessageBox.Show("Lütfen Gerekli Yerleri Doğru Bir Şekilde Doldurunuz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -42,6 +42,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.OgrenciEkleCikar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -88,9 +89,9 @@
             // 
             this.SifreYenile.BackColor = System.Drawing.Color.Maroon;
             this.SifreYenile.ForeColor = System.Drawing.Color.White;
-            this.SifreYenile.Location = new System.Drawing.Point(360, 450);
+            this.SifreYenile.Location = new System.Drawing.Point(269, 450);
             this.SifreYenile.Name = "SifreYenile";
-            this.SifreYenile.Size = new System.Drawing.Size(140, 80);
+            this.SifreYenile.Size = new System.Drawing.Size(102, 80);
             this.SifreYenile.TabIndex = 4;
             this.SifreYenile.Text = "Şifremi Unuttum!";
             this.SifreYenile.UseVisualStyleBackColor = false;
@@ -102,7 +103,7 @@
             this.YeniDers.ForeColor = System.Drawing.Color.White;
             this.YeniDers.Location = new System.Drawing.Point(12, 450);
             this.YeniDers.Name = "YeniDers";
-            this.YeniDers.Size = new System.Drawing.Size(140, 80);
+            this.YeniDers.Size = new System.Drawing.Size(102, 80);
             this.YeniDers.TabIndex = 3;
             this.YeniDers.Text = "Yeni Ders Ekle";
             this.YeniDers.UseVisualStyleBackColor = false;
@@ -136,9 +137,9 @@
             // 
             this.YoklamaDurumu.BackColor = System.Drawing.Color.SaddleBrown;
             this.YoklamaDurumu.ForeColor = System.Drawing.Color.White;
-            this.YoklamaDurumu.Location = new System.Drawing.Point(186, 450);
+            this.YoklamaDurumu.Location = new System.Drawing.Point(138, 450);
             this.YoklamaDurumu.Name = "YoklamaDurumu";
-            this.YoklamaDurumu.Size = new System.Drawing.Size(140, 80);
+            this.YoklamaDurumu.Size = new System.Drawing.Size(102, 80);
             this.YoklamaDurumu.TabIndex = 17;
             this.YoklamaDurumu.Text = "Yoklama Durumu";
             this.YoklamaDurumu.UseVisualStyleBackColor = false;
@@ -217,12 +218,25 @@
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
+            // OgrenciEkleCikar
+            // 
+            this.OgrenciEkleCikar.BackColor = System.Drawing.Color.OrangeRed;
+            this.OgrenciEkleCikar.ForeColor = System.Drawing.Color.White;
+            this.OgrenciEkleCikar.Location = new System.Drawing.Point(392, 450);
+            this.OgrenciEkleCikar.Name = "OgrenciEkleCikar";
+            this.OgrenciEkleCikar.Size = new System.Drawing.Size(112, 80);
+            this.OgrenciEkleCikar.TabIndex = 19;
+            this.OgrenciEkleCikar.Text = "Öğrenci Ekle/Çıkar";
+            this.OgrenciEkleCikar.UseVisualStyleBackColor = false;
+            this.OgrenciEkleCikar.Click += new System.EventHandler(this.OgrenciEkleCikar_Click);
+            // 
             // GirisEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.OgrenciEkleCikar);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.YoklamaDurumu);
@@ -269,6 +283,7 @@
         private System.Windows.Forms.Button parolasett;
         private System.Windows.Forms.Button YoklamaDurumu;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button OgrenciEkleCikar;
     }
 }
 

@@ -13,7 +13,7 @@ namespace YoklamaOtomasyonu
         private List<ListViewItem> originalItems = new List<ListViewItem>();
         FiltreAdSoyad filtread;
         FiltreOgrenciNo filtreogrencino;
-        FiltreDevamsizlık filtredevamsizlik;
+        FiltreDevamsizlik filtredevamsizlik;
         GirisEkrani girisekrani;
         AnaEkran anaekran;
 
@@ -78,6 +78,24 @@ namespace YoklamaOtomasyonu
             }
             else if (DevamsizlikFiltre.Checked)
             {
+                Tablo.Items.Clear();
+
+                foreach (ListViewItem item in originalItems)
+                {
+                    try
+                    {
+                        int devamsizlik = Convert.ToInt32(item.SubItems[3].Text);
+
+                        if (devamsizlik >= alt && devamsizlik <= üst)
+                        {
+                            Tablo.Items.Add((ListViewItem)item.Clone());
+                        }
+                    }
+                    catch (FormatException ex)
+                    {
+                        MessageBox.Show("Hata: " + ex.Message);
+                    }
+                }
             }
         }
 
@@ -148,10 +166,10 @@ namespace YoklamaOtomasyonu
 
         private void DevamsizlikFiltre_CheckedChanged(object sender, EventArgs e)
         {
-            filtredevamsizlik = Application.OpenForms.OfType<FiltreDevamsizlık>().FirstOrDefault();
+            filtredevamsizlik = Application.OpenForms.OfType<FiltreDevamsizlik>().FirstOrDefault();
             if (filtredevamsizlik == null)
             {
-                filtredevamsizlik = new FiltreDevamsizlık();
+                filtredevamsizlik = new FiltreDevamsizlik();
                 filtredevamsizlik.TopLevel = false;
                 panel1.Controls.Add(filtredevamsizlik);
             }
@@ -170,25 +188,7 @@ namespace YoklamaOtomasyonu
         {
             girisekrani = Application.OpenForms.OfType<GirisEkrani>().FirstOrDefault();
             
-            if (filtreogrencino != null && filtreogrencino.Visible == true)
-            {
-                filtreogrencino.ustsinir.Clear();
-                filtreogrencino.altsinir.Clear();
-                filtreogrencino.Hide();
-            }
-
-            if (filtread != null && filtread.Visible == true)
-            {
-                filtread.AdSoyad.Clear();
-                filtread.Hide();
-            }
-
-            if (filtredevamsizlik != null && filtredevamsizlik.Visible == true)
-            {
-                filtredevamsizlik.ustsinir.Clear();
-                filtredevamsizlik.altsinir.Clear();
-                filtredevamsizlik.Hide();
-            }
+            FiltreyiTemizle_Click(sender, e);
 
             girisekrani.DersleriCek();
             this.Hide();

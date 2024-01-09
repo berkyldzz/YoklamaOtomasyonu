@@ -125,18 +125,22 @@ namespace YoklamaOtomasyonu
 
         private void GeriDon_Click(object sender, EventArgs e)
         {
-            dogrulama = new Dogrulama();
-                dogrulama.TopLevel = false;
-                    panel2.Controls.Add(dogrulama);
-                        if (devamdurumu!=null && devamdurumu.Visible==true)
-                        {
-                            devamdurumu.Hide();
+            devamdurumu = Application.OpenForms.OfType<DevamsizlikDurumu>().FirstOrDefault();
 
-                        }
-                            dogrulama.Show();
-                                OgrenciNo.Clear();
-                                    isimlabel.Text = "";
-                                        YoklamaAlindiMi.Text = "";
+            if (dogrulama == null)
+            {
+                dogrulama = new Dogrulama();
+                dogrulama.TopLevel = false;
+                panel2.Controls.Add(dogrulama);
+            }
+            if (devamdurumu!=null && devamdurumu.Visible==true)
+            {
+                devamdurumu.Hide();
+            }
+                dogrulama.Show();
+                OgrenciNo.Clear();
+                isimlabel.Text = "";
+                YoklamaAlindiMi.Text = "";
         }
 
         private void OgrenciNo_Click(object sender, EventArgs e)

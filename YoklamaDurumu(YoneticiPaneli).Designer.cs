@@ -40,9 +40,11 @@
             // OgrenciNoFiltre
             // 
             this.OgrenciNoFiltre.AutoSize = true;
-            this.OgrenciNoFiltre.Location = new System.Drawing.Point(16, 31);
+            this.OgrenciNoFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.OgrenciNoFiltre.ForeColor = System.Drawing.Color.White;
+            this.OgrenciNoFiltre.Location = new System.Drawing.Point(12, 31);
             this.OgrenciNoFiltre.Name = "OgrenciNoFiltre";
-            this.OgrenciNoFiltre.Size = new System.Drawing.Size(139, 17);
+            this.OgrenciNoFiltre.Size = new System.Drawing.Size(181, 21);
             this.OgrenciNoFiltre.TabIndex = 1;
             this.OgrenciNoFiltre.TabStop = true;
             this.OgrenciNoFiltre.Text = "Öğrenci No ile Filtreleme";
@@ -52,9 +54,11 @@
             // AdSoyadFiltre
             // 
             this.AdSoyadFiltre.AutoSize = true;
-            this.AdSoyadFiltre.Location = new System.Drawing.Point(182, 31);
+            this.AdSoyadFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AdSoyadFiltre.ForeColor = System.Drawing.Color.White;
+            this.AdSoyadFiltre.Location = new System.Drawing.Point(161, 65);
             this.AdSoyadFiltre.Name = "AdSoyadFiltre";
-            this.AdSoyadFiltre.Size = new System.Drawing.Size(132, 17);
+            this.AdSoyadFiltre.Size = new System.Drawing.Size(170, 21);
             this.AdSoyadFiltre.TabIndex = 2;
             this.AdSoyadFiltre.TabStop = true;
             this.AdSoyadFiltre.Text = "Ad Soyad İle Filtreleme";
@@ -64,9 +68,11 @@
             // DevamsizlikFiltre
             // 
             this.DevamsizlikFiltre.AutoSize = true;
-            this.DevamsizlikFiltre.Location = new System.Drawing.Point(74, 73);
+            this.DevamsizlikFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DevamsizlikFiltre.ForeColor = System.Drawing.Color.White;
+            this.DevamsizlikFiltre.Location = new System.Drawing.Point(12, 100);
             this.DevamsizlikFiltre.Name = "DevamsizlikFiltre";
-            this.DevamsizlikFiltre.Size = new System.Drawing.Size(172, 17);
+            this.DevamsizlikFiltre.Size = new System.Drawing.Size(224, 21);
             this.DevamsizlikFiltre.TabIndex = 2;
             this.DevamsizlikFiltre.TabStop = true;
             this.DevamsizlikFiltre.Text = "Devamsızlık Sayısı İle Filtreleme";
@@ -75,6 +81,7 @@
             // 
             // panel1
             // 
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(19, 154);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 225);
@@ -82,17 +89,21 @@
             // 
             // GeriDon
             // 
+            this.GeriDon.BackColor = System.Drawing.Color.DarkRed;
+            this.GeriDon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.GeriDon.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.GeriDon.ForeColor = System.Drawing.Color.Wheat;
             this.GeriDon.Location = new System.Drawing.Point(19, 482);
             this.GeriDon.Name = "GeriDon";
             this.GeriDon.Size = new System.Drawing.Size(295, 48);
             this.GeriDon.TabIndex = 4;
             this.GeriDon.Text = "Geri Dön";
-            this.GeriDon.UseVisualStyleBackColor = true;
+            this.GeriDon.UseVisualStyleBackColor = false;
             this.GeriDon.Click += new System.EventHandler(this.GeriDon_Click);
             // 
             // Tablo
             // 
+            this.Tablo.BackColor = System.Drawing.Color.Aqua;
             this.Tablo.Font = new System.Drawing.Font("Tahoma", 11F);
             this.Tablo.HideSelection = false;
             this.Tablo.Location = new System.Drawing.Point(336, 12);
@@ -104,19 +115,23 @@
             // 
             // FiltreyiTemizle
             // 
+            this.FiltreyiTemizle.BackColor = System.Drawing.Color.DarkGreen;
+            this.FiltreyiTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FiltreyiTemizle.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.FiltreyiTemizle.ForeColor = System.Drawing.Color.Wheat;
             this.FiltreyiTemizle.Location = new System.Drawing.Point(19, 394);
             this.FiltreyiTemizle.Name = "FiltreyiTemizle";
             this.FiltreyiTemizle.Size = new System.Drawing.Size(295, 48);
             this.FiltreyiTemizle.TabIndex = 6;
             this.FiltreyiTemizle.Text = "Filtreyi Temizle";
-            this.FiltreyiTemizle.UseVisualStyleBackColor = true;
+            this.FiltreyiTemizle.UseVisualStyleBackColor = false;
             this.FiltreyiTemizle.Click += new System.EventHandler(this.FiltreyiTemizle_Click);
             // 
             // YoklamaDurumu_YoneticiPaneli_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.FiltreyiTemizle);
             this.Controls.Add(this.Tablo);

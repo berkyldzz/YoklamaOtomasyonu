@@ -16,6 +16,7 @@ namespace YoklamaOtomasyonu
         public static YoklamaEkrani yoklamaekrani;
         DataTable VTDersler;
         YoklamaDurumu_YoneticiPaneli_ yoklamadurumu;
+        OgrenciEkleCikar ogrencieklecikar;
 
         public GirisEkrani()
         {
@@ -83,14 +84,14 @@ namespace YoklamaOtomasyonu
             if (sifreyenile == null)
             {
                 sifreyenile = new SifreYenile();
+                sifreyenile.TopLevel = false;
+                anaekran.AnaPanel.Controls.Add(sifreyenile);
             }
             
-            sifreyenile.TopLevel = false;
-                anaekran.AnaPanel.Controls.Add(sifreyenile);
-                    this.Hide();
-                        sifreyenile.Show();
-                            Parola.Clear();
-
+            Parola.Clear();
+            sifreyenile.DersleriCek();
+            this.Hide();
+            sifreyenile.Show();
         }
 
         private void YoklamaDurumu_Click(object sender, EventArgs e)
@@ -164,5 +165,18 @@ namespace YoklamaOtomasyonu
             }
         }
 
+        private void OgrenciEkleCikar_Click(object sender, EventArgs e)
+        {
+            ogrencieklecikar = Application.OpenForms.OfType<OgrenciEkleCikar>().FirstOrDefault();
+
+            if (ogrencieklecikar == null)
+            {
+                ogrencieklecikar = new OgrenciEkleCikar();
+                ogrencieklecikar.TopLevel = false;
+                anaekran.AnaPanel.Controls.Add(ogrencieklecikar);
+            }
+            this.Hide();
+            ogrencieklecikar.Show();
+        }
     }
 }

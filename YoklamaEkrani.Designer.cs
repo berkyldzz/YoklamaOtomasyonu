@@ -121,7 +121,7 @@
             this.GeriDon.Location = new System.Drawing.Point(191, 457);
             this.GeriDon.Name = "GeriDon";
             this.GeriDon.Size = new System.Drawing.Size(144, 92);
-            this.GeriDon.TabIndex = 7;
+            this.GeriDon.TabIndex = 3;
             this.GeriDon.Text = "Geri Dön";
             this.GeriDon.UseVisualStyleBackColor = false;
             this.GeriDon.Click += new System.EventHandler(this.GeriDon_Click);

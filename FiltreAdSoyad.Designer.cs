@@ -43,13 +43,15 @@
             // 
             // Filtrele
             // 
+            this.Filtrele.BackColor = System.Drawing.Color.DarkOrange;
+            this.Filtrele.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Filtrele.Font = new System.Drawing.Font("Tahoma", 13F);
             this.Filtrele.Location = new System.Drawing.Point(102, 147);
             this.Filtrele.Name = "Filtrele";
             this.Filtrele.Size = new System.Drawing.Size(90, 42);
             this.Filtrele.TabIndex = 1;
             this.Filtrele.Text = "Filtrele";
-            this.Filtrele.UseVisualStyleBackColor = true;
+            this.Filtrele.UseVisualStyleBackColor = false;
             this.Filtrele.Click += new System.EventHandler(this.Filtrele_Click);
             // 
             // label1
@@ -66,6 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(295, 225);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Filtrele);
