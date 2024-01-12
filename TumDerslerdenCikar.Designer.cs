@@ -42,24 +42,27 @@
             this.YoneticiParolasi.Name = "YoneticiParolasi";
             this.YoneticiParolasi.Size = new System.Drawing.Size(289, 32);
             this.YoneticiParolasi.TabIndex = 11;
+            this.YoneticiParolasi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.YoneticiParolasi.UseSystemPasswordChar = true;
             // 
             // OgrenciNo
             // 
             this.OgrenciNo.Font = new System.Drawing.Font("Tahoma", 15F);
             this.OgrenciNo.Location = new System.Drawing.Point(113, 59);
+            this.OgrenciNo.MaxLength = 9;
             this.OgrenciNo.Name = "OgrenciNo";
             this.OgrenciNo.Size = new System.Drawing.Size(289, 32);
             this.OgrenciNo.TabIndex = 10;
+            this.OgrenciNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OgrenciyiSil
             // 
             this.OgrenciyiSil.BackColor = System.Drawing.Color.OrangeRed;
             this.OgrenciyiSil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OgrenciyiSil.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.OgrenciyiSil.Location = new System.Drawing.Point(113, 255);
+            this.OgrenciyiSil.Location = new System.Drawing.Point(116, 255);
             this.OgrenciyiSil.Name = "OgrenciyiSil";
-            this.OgrenciyiSil.Size = new System.Drawing.Size(183, 42);
+            this.OgrenciyiSil.Size = new System.Drawing.Size(171, 47);
             this.OgrenciyiSil.TabIndex = 9;
             this.OgrenciyiSil.Text = "Öğrenciyi Sil";
             this.OgrenciyiSil.UseVisualStyleBackColor = false;
@@ -67,7 +70,7 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(7, 144);
             this.label4.Name = "label4";
@@ -78,11 +81,11 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 54);
+            this.label3.Location = new System.Drawing.Point(7, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 42);
+            this.label3.Size = new System.Drawing.Size(100, 53);
             this.label3.TabIndex = 13;
             this.label3.Text = "Öğrenci Numarası";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,11 +110,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox YoneticiParolasi;
-        private System.Windows.Forms.TextBox OgrenciNo;
         private System.Windows.Forms.Button OgrenciyiSil;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox YoneticiParolasi;
+        public System.Windows.Forms.TextBox OgrenciNo;
     }
 }

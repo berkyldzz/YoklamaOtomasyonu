@@ -18,11 +18,13 @@ namespace YoklamaOtomasyonu
         public static int devamsizlikhakki;
         public static int devamsizlik;
         DevamsizlikDurumu devamdurumu = Application.OpenForms.OfType<DevamsizlikDurumu>().FirstOrDefault();
-        List<string> katilanlar = new List<string>();
+        public static List<string> katilanlar = new List<string>();
         Dogrulama dogrulama;
 
         private void YoklamaEkrani_Load(object sender, EventArgs e)
         {
+            DateTime bugun = DateTime.Now;
+            Tarih.Text = bugun.ToString("dd.MM.yyyy");
         }
 
         private void DevamDurumu_Click(object sender, EventArgs e)

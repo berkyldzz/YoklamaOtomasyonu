@@ -16,38 +16,51 @@ namespace YoklamaOtomasyonu
         FiltreDevamsizlik filtredevamsizlik;
         GirisEkrani girisekrani;
         AnaEkran anaekran;
+        BilgilendirmeMaili bilgimail;
+        string ders;
 
         public YoklamaDurumu_YoneticiPaneli_()
         {
             InitializeComponent();
         }
 
-        public void OgrencileriGetir(object sender, EventArgs e)
+        public void OgrencileriGetir()
         {
             if (veritabani.State == ConnectionState.Closed)
             {
                 veritabani.Open();
             }
 
-            OleDbCommand komut = new OleDbCommand($"SELECT AdSoyad, ÖğrenciNo, Mail, Devamsızlık, MaxDevamsızlık FROM {GirisEkrani.ders + "_"}", veritabani);
+            if (GirisEkrani.ders == "ÖğrenciBilgileri")
+            {
+                ders = GirisEkrani.ders;
+            }
+            else
+            {
+                ders = GirisEkrani.ders+"_";
+            }
+
+            OleDbCommand komut = new OleDbCommand($"SELECT AdSoyad, ÖğrenciNo,Devamsızlık, MaxDevamsızlık,DevamsızlıkTarihleri FROM {ders}", veritabani);
             OleDbDataReader oku = komut.ExecuteReader();
 
             Tablo.View = View.Details;
             Tablo.GridLines = true;
             Tablo.Columns.Add("Ad Soyad", 130);
             Tablo.Columns.Add("Öğrenci No", 90);
-            Tablo.Columns.Add("Mail", 170);
             Tablo.Columns.Add("Devamsızlık", 100);
             Tablo.Columns.Add("Devamsızlık Hakkı", 140);
+            Tablo.Columns.Add("Devamsızlık Tarihleri", 200);
 
+            // originalItems listesini temizle
             originalItems.Clear();
 
             while (oku.Read())
             {
-                string[] row = new string[] { oku["AdSoyad"].ToString(), oku["ÖğrenciNo"].ToString(), oku["Mail"].ToString(), oku["Devamsızlık"].ToString(), oku["MaxDevamsızlık"].ToString() };
+                string[] row = new string[] { oku["AdSoyad"].ToString(), oku["ÖğrenciNo"].ToString(), oku["Devamsızlık"].ToString(), oku["MaxDevamsızlık"].ToString(), oku["DevamsızlıkTarihleri"].ToString() };
                 ListViewItem listViewItem = new ListViewItem(row);
                 Tablo.Items.Add(listViewItem);
 
+                // originalItems listesine ekle
                 originalItems.Add(listViewItem);
             }
             oku.Close();
@@ -229,5 +242,35 @@ namespace YoklamaOtomasyonu
             }
         }
 
+        private void Mail_Click(object sender, EventArgs e)
+        {
+            if (filtreogrencino != null && filtreogrencino.Visible == true)
+            {
+                filtreogrencino.ustsinir.Clear();
+                filtreogrencino.altsinir.Clear();
+                filtreogrencino.Hide();
+            }
+            if (filtredevamsizlik != null && filtredevamsizlik.Visible == true)
+            {
+                filtredevamsizlik.ustsinir.Clear();
+                filtredevamsizlik.altsinir.Clear();
+                filtredevamsizlik.Hide();
+            }
+            if(filtread != null && filtread.Visible == true)
+            {
+                filtread.AdSoyad.Clear();
+                filtredevamsizlik.Hide();
+            }
+            
+            bilgimail =Application.OpenForms.OfType<BilgilendirmeMaili>().FirstOrDefault();
+
+            if (bilgimail == null)
+            {
+                bilgimail = new BilgilendirmeMaili();
+                bilgimail.TopLevel = false;
+                panel1.Controls.Add(bilgimail);
+            }
+            bilgimail.Show();
+        }
     }
 }

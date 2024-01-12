@@ -42,9 +42,9 @@
             this.OgrenciyiKaydet.BackColor = System.Drawing.Color.OrangeRed;
             this.OgrenciyiKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OgrenciyiKaydet.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.OgrenciyiKaydet.Location = new System.Drawing.Point(115, 247);
+            this.OgrenciyiKaydet.Location = new System.Drawing.Point(116, 268);
             this.OgrenciyiKaydet.Name = "OgrenciyiKaydet";
-            this.OgrenciyiKaydet.Size = new System.Drawing.Size(183, 42);
+            this.OgrenciyiKaydet.Size = new System.Drawing.Size(171, 47);
             this.OgrenciyiKaydet.TabIndex = 1;
             this.OgrenciyiKaydet.Text = "Öğrenciyi Kaydet";
             this.OgrenciyiKaydet.UseVisualStyleBackColor = false;
@@ -52,9 +52,9 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(14, 154);
+            this.label4.Location = new System.Drawing.Point(14, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 58);
             this.label4.TabIndex = 9;
@@ -63,22 +63,22 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(14, 101);
+            this.label3.Location = new System.Drawing.Point(14, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 42);
+            this.label3.Size = new System.Drawing.Size(100, 54);
             this.label3.TabIndex = 10;
             this.label3.Text = "Öğrenci Numarası";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 43);
+            this.label2.Location = new System.Drawing.Point(14, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 32);
+            this.label2.Size = new System.Drawing.Size(100, 65);
             this.label2.TabIndex = 11;
             this.label2.Text = "Adı Soyadı ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,7 +86,7 @@
             // YoneticiParolasi
             // 
             this.YoneticiParolasi.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.YoneticiParolasi.Location = new System.Drawing.Point(115, 167);
+            this.YoneticiParolasi.Location = new System.Drawing.Point(115, 211);
             this.YoneticiParolasi.Name = "YoneticiParolasi";
             this.YoneticiParolasi.Size = new System.Drawing.Size(289, 32);
             this.YoneticiParolasi.TabIndex = 8;
@@ -95,7 +95,8 @@
             // OgrenciNo
             // 
             this.OgrenciNo.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.OgrenciNo.Location = new System.Drawing.Point(115, 106);
+            this.OgrenciNo.Location = new System.Drawing.Point(115, 127);
+            this.OgrenciNo.MaxLength = 9;
             this.OgrenciNo.Name = "OgrenciNo";
             this.OgrenciNo.Size = new System.Drawing.Size(289, 32);
             this.OgrenciNo.TabIndex = 7;
@@ -134,8 +135,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox YoneticiParolasi;
-        private System.Windows.Forms.TextBox OgrenciNo;
-        private System.Windows.Forms.TextBox AdSoyad;
+        public System.Windows.Forms.TextBox YoneticiParolasi;
+        public System.Windows.Forms.TextBox OgrenciNo;
+        public System.Windows.Forms.TextBox AdSoyad;
     }
 }

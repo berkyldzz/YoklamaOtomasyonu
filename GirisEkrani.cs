@@ -17,6 +17,7 @@ namespace YoklamaOtomasyonu
         DataTable VTDersler;
         YoklamaDurumu_YoneticiPaneli_ yoklamadurumu;
         OgrenciEkleCikar ogrencieklecikar;
+        DersSil derssil;
 
         public GirisEkrani()
         {
@@ -31,33 +32,47 @@ namespace YoklamaOtomasyonu
         private void GirisYap_Click(object sender, EventArgs e)
         {
             ders = Dersler.Text;
-            
-            OleDbCommand komut = new OleDbCommand($"SELECT * FROM GörevliBilgileri Where Parola='{Parola.Text}' and DersAdı='{ders}'", veritabani);
-                OleDbDataReader oku = komut.ExecuteReader();
 
-            if (Parola.Text==""||Dersler.Text=="")
+            if (Dersler.Text == "")
             {
-                MessageBox.Show("Lütfen Gerekli Yerleri Doğru Şekilde Doldurun !", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen Ders Seçimi Yapınız !", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (oku.Read())
+                if (ders == "ÖğrenciBilgileri")
                 {
-                    if (yoklamaekrani == null)
-                    {
-                        yoklamaekrani = new YoklamaEkrani();
-                        yoklamaekrani.TopLevel = false;
-                        anaekran.AnaPanel.Controls.Add(yoklamaekrani);
-                    }
-                        yoklamaekrani.Dersadilabel.Text = ders;
-                        this.Hide();
-                        yoklamaekrani.Show();  
-                        Parola.Clear();
+                    MessageBox.Show("Bu Liste İçin Yalnızca Yoklama Durumu Kulanılarak Öğrenci Kontrolu Yapılabilir !");
                 }
-                else
+                else 
                 {
-                    MessageBox.Show("Hatalı Parola!\nTekrar Deneyiniz!","",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Parola.Clear();
+                    if (Parola.Text == "")
+                    {
+                        MessageBox.Show("Lütfen Parola Giriniz !", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        OleDbCommand komut = new OleDbCommand($"SELECT * FROM GörevliBilgileri Where Parola='{Parola.Text}' and DersAdı='{ders}'", veritabani);
+                        OleDbDataReader oku = komut.ExecuteReader();
+
+                        if (oku.Read())
+                        {
+                            if (yoklamaekrani == null)
+                            {
+                                yoklamaekrani = new YoklamaEkrani();
+                                yoklamaekrani.TopLevel = false;
+                                anaekran.AnaPanel.Controls.Add(yoklamaekrani);
+                            }
+                            yoklamaekrani.Dersadilabel.Text = ders;
+                            this.Hide();
+                            yoklamaekrani.Show();
+                            Parola.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hatalı Parola!\nTekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Parola.Clear();
+                        }
+                    }
                 }
             }
         }
@@ -98,32 +113,66 @@ namespace YoklamaOtomasyonu
         {
             ders = Dersler.Text;
 
-            if (Dersler.Text == "" || Parola.Text == "")
+            if (Dersler.Text == "")
             {
-                MessageBox.Show("Lütfen Gerekli Yerleri Doldurunuz !", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen Ders Seçimi Yapınız !", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                OleDbCommand komut = new OleDbCommand($"SELECT * FROM GörevliBilgileri Where Parola='{Parola.Text}' and DersAdı='{ders}'", veritabani);
-                OleDbDataReader oku = komut.ExecuteReader();
-
-                if (oku.Read())
+                if (ders == "ÖğrenciBilgileri")
                 {
-                    if (yoklamadurumu == null)
+                    OleDbCommand komut = new OleDbCommand($"SELECT * FROM YöneticiParolası",veritabani);
+                    OleDbDataReader oku = komut.ExecuteReader();
+
+                    if (oku.Read()) 
                     {
-                        yoklamadurumu = new YoklamaDurumu_YoneticiPaneli_();
-                        yoklamadurumu.TopLevel = false;
-                        anaekran.AnaPanel.Controls.Add(yoklamadurumu);
+                        if (yoklamadurumu == null)
+                        {
+                            yoklamadurumu = new YoklamaDurumu_YoneticiPaneli_();
+                            yoklamadurumu.TopLevel = false;
+                            anaekran.AnaPanel.Controls.Add(yoklamadurumu);
+                        }
+
+                        yoklamadurumu.Tablo.Clear();
+                        yoklamadurumu.OgrencileriGetir();
+                        Parola.Clear();
+                        this.Hide();
+                        yoklamadurumu.Show();
                     }
-                    Parola.Clear();
-                    this.Hide();
-                    yoklamadurumu.Show();
+                    else
+                    {
+                        MessageBox.Show("Hatalı Parola!\nTekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Parola.Clear();
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Hatalı Parola!\nTekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Parola.Clear();
+                    OleDbCommand komut = new OleDbCommand($"SELECT * FROM GörevliBilgileri Where Parola='{Parola.Text}' and DersAdı='{ders}'", veritabani);
+                    OleDbDataReader oku = komut.ExecuteReader();
+
+                    if (oku.Read())
+                    {
+                        if (yoklamadurumu == null)
+                        {
+                            yoklamadurumu = new YoklamaDurumu_YoneticiPaneli_();
+                            yoklamadurumu.TopLevel = false;
+                            anaekran.AnaPanel.Controls.Add(yoklamadurumu);
+                        }
+
+                        yoklamadurumu.Tablo.Clear();
+                        yoklamadurumu.OgrencileriGetir();
+                        Parola.Clear();
+                        this.Hide();
+                        yoklamadurumu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hatalı Parola!\nTekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Parola.Clear();
+                    }
                 }
+                
             }
         }
 
@@ -141,9 +190,23 @@ namespace YoklamaOtomasyonu
             }
         }
 
+        private void OgrenciEkleCikar_Click(object sender, EventArgs e)
+        {
+            ogrencieklecikar = Application.OpenForms.OfType<OgrenciEkleCikar>().FirstOrDefault();
+
+            if (ogrencieklecikar == null)
+            {
+                ogrencieklecikar = new OgrenciEkleCikar();
+                ogrencieklecikar.TopLevel = false;
+                anaekran.AnaPanel.Controls.Add(ogrencieklecikar);
+            }
+            this.Hide();
+            ogrencieklecikar.Show();
+        }
+
         public void DersleriCek()
         {
-            string derss ;
+            string derss;
 
             if (veritabani.State == ConnectionState.Closed)
             {
@@ -162,21 +225,29 @@ namespace YoklamaOtomasyonu
                 {
                     Dersler.Items.Add(derss.Remove(derss.Length - 1));
                 }
+                if (derss == "ÖğrenciBilgileri" && !Dersler.Items.Contains(derss))
+                {
+                    Dersler.Items.Add(derss);
+                }
             }
         }
 
-        private void OgrenciEkleCikar_Click(object sender, EventArgs e)
+        private void DersiSil_Click(object sender, EventArgs e)
         {
-            ogrencieklecikar = Application.OpenForms.OfType<OgrenciEkleCikar>().FirstOrDefault();
+            derssil = Application.OpenForms.OfType<DersSil>().FirstOrDefault();
+            
+            Parola.Clear();
 
-            if (ogrencieklecikar == null)
+            if(derssil == null)
             {
-                ogrencieklecikar = new OgrenciEkleCikar();
-                ogrencieklecikar.TopLevel = false;
-                anaekran.AnaPanel.Controls.Add(ogrencieklecikar);
+                derssil = new DersSil();
+                derssil.TopLevel = false;
+                anaekran.AnaPanel.Controls.Add(derssil);
             }
+
             this.Hide();
-            ogrencieklecikar.Show();
+            derssil.DersleriCek();
+            derssil.Show();
         }
     }
 }

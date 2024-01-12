@@ -31,6 +31,7 @@
             this.OgrenciNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Tarih = new System.Windows.Forms.Label();
             this.yoneticiparolagizle = new System.Windows.Forms.Button();
             this.Dersadilabel = new System.Windows.Forms.Label();
             this.GeriDon = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.Tarih);
             this.panel1.Controls.Add(this.yoneticiparolagizle);
             this.panel1.Controls.Add(this.Dersadilabel);
             this.panel1.Controls.Add(this.GeriDon);
@@ -87,6 +89,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(363, 561);
             this.panel1.TabIndex = 3;
+            // 
+            // Tarih
+            // 
+            this.Tarih.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.Tarih.ForeColor = System.Drawing.Color.White;
+            this.Tarih.Location = new System.Drawing.Point(14, 0);
+            this.Tarih.Name = "Tarih";
+            this.Tarih.Size = new System.Drawing.Size(346, 38);
+            this.Tarih.TabIndex = 16;
+            this.Tarih.Text = "Tarih";
+            this.Tarih.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // yoneticiparolagizle
             // 
@@ -241,5 +254,6 @@
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label Dersadilabel;
         private System.Windows.Forms.Button yoneticiparolagizle;
+        public System.Windows.Forms.Label Tarih;
     }
 }

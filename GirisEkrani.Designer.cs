@@ -36,25 +36,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.YoklamaDurumu = new System.Windows.Forms.Button();
+            this.OgrenciEkleCikar = new System.Windows.Forms.Button();
+            this.DersiSil = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.parolasett = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.OgrenciEkleCikar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // Parola
             // 
             this.Parola.BackColor = System.Drawing.Color.SeaShell;
             this.Parola.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.Parola.Location = new System.Drawing.Point(100, 309);
+            this.Parola.Location = new System.Drawing.Point(142, 311);
             this.Parola.Name = "Parola";
             this.Parola.Size = new System.Drawing.Size(311, 32);
             this.Parola.TabIndex = 1;
@@ -65,9 +66,9 @@
             // 
             this.GirisYap.BackColor = System.Drawing.Color.Green;
             this.GirisYap.ForeColor = System.Drawing.Color.White;
-            this.GirisYap.Location = new System.Drawing.Point(100, 371);
+            this.GirisYap.Location = new System.Drawing.Point(142, 371);
             this.GirisYap.Name = "GirisYap";
-            this.GirisYap.Size = new System.Drawing.Size(311, 61);
+            this.GirisYap.Size = new System.Drawing.Size(277, 80);
             this.GirisYap.TabIndex = 2;
             this.GirisYap.Text = "Yoklamayı Başlat";
             this.GirisYap.UseVisualStyleBackColor = false;
@@ -80,7 +81,7 @@
             this.Dersler.Font = new System.Drawing.Font("Tahoma", 15F);
             this.Dersler.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Dersler.FormattingEnabled = true;
-            this.Dersler.Location = new System.Drawing.Point(100, 223);
+            this.Dersler.Location = new System.Drawing.Point(142, 225);
             this.Dersler.Name = "Dersler";
             this.Dersler.Size = new System.Drawing.Size(311, 32);
             this.Dersler.TabIndex = 0;
@@ -89,9 +90,9 @@
             // 
             this.SifreYenile.BackColor = System.Drawing.Color.Maroon;
             this.SifreYenile.ForeColor = System.Drawing.Color.White;
-            this.SifreYenile.Location = new System.Drawing.Point(269, 450);
+            this.SifreYenile.Location = new System.Drawing.Point(425, 371);
             this.SifreYenile.Name = "SifreYenile";
-            this.SifreYenile.Size = new System.Drawing.Size(102, 80);
+            this.SifreYenile.Size = new System.Drawing.Size(131, 80);
             this.SifreYenile.TabIndex = 4;
             this.SifreYenile.Text = "Şifremi Unuttum!";
             this.SifreYenile.UseVisualStyleBackColor = false;
@@ -101,9 +102,9 @@
             // 
             this.YeniDers.BackColor = System.Drawing.Color.MediumVioletRed;
             this.YeniDers.ForeColor = System.Drawing.Color.White;
-            this.YeniDers.Location = new System.Drawing.Point(12, 450);
+            this.YeniDers.Location = new System.Drawing.Point(197, 469);
             this.YeniDers.Name = "YeniDers";
-            this.YeniDers.Size = new System.Drawing.Size(102, 80);
+            this.YeniDers.Size = new System.Drawing.Size(167, 80);
             this.YeniDers.TabIndex = 3;
             this.YeniDers.Text = "Yeni Ders Ekle";
             this.YeniDers.UseVisualStyleBackColor = false;
@@ -115,7 +116,7 @@
             this.label1.BackColor = System.Drawing.Color.RoyalBlue;
             this.label1.Font = new System.Drawing.Font("Tahoma", 20F);
             this.label1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label1.Location = new System.Drawing.Point(94, 273);
+            this.label1.Location = new System.Drawing.Point(136, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 33);
             this.label1.TabIndex = 9;
@@ -127,7 +128,7 @@
             this.label2.BackColor = System.Drawing.Color.RoyalBlue;
             this.label2.Font = new System.Drawing.Font("Tahoma", 20F);
             this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label2.Location = new System.Drawing.Point(94, 187);
+            this.label2.Location = new System.Drawing.Point(136, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 33);
             this.label2.TabIndex = 9;
@@ -137,20 +138,69 @@
             // 
             this.YoklamaDurumu.BackColor = System.Drawing.Color.SaddleBrown;
             this.YoklamaDurumu.ForeColor = System.Drawing.Color.White;
-            this.YoklamaDurumu.Location = new System.Drawing.Point(138, 450);
+            this.YoklamaDurumu.Location = new System.Drawing.Point(5, 371);
             this.YoklamaDurumu.Name = "YoklamaDurumu";
-            this.YoklamaDurumu.Size = new System.Drawing.Size(102, 80);
+            this.YoklamaDurumu.Size = new System.Drawing.Size(131, 80);
             this.YoklamaDurumu.TabIndex = 17;
             this.YoklamaDurumu.Text = "Yoklama Durumu";
             this.YoklamaDurumu.UseVisualStyleBackColor = false;
             this.YoklamaDurumu.Click += new System.EventHandler(this.YoklamaDurumu_Click);
+            // 
+            // OgrenciEkleCikar
+            // 
+            this.OgrenciEkleCikar.BackColor = System.Drawing.Color.OrangeRed;
+            this.OgrenciEkleCikar.ForeColor = System.Drawing.Color.White;
+            this.OgrenciEkleCikar.Location = new System.Drawing.Point(389, 469);
+            this.OgrenciEkleCikar.Name = "OgrenciEkleCikar";
+            this.OgrenciEkleCikar.Size = new System.Drawing.Size(167, 80);
+            this.OgrenciEkleCikar.TabIndex = 19;
+            this.OgrenciEkleCikar.Text = "Öğrenci Ekle/Çıkar";
+            this.OgrenciEkleCikar.UseVisualStyleBackColor = false;
+            this.OgrenciEkleCikar.Click += new System.EventHandler(this.OgrenciEkleCikar_Click);
+            // 
+            // DersiSil
+            // 
+            this.DersiSil.BackColor = System.Drawing.Color.SeaGreen;
+            this.DersiSil.ForeColor = System.Drawing.Color.White;
+            this.DersiSil.Location = new System.Drawing.Point(5, 469);
+            this.DersiSil.Name = "DersiSil";
+            this.DersiSil.Size = new System.Drawing.Size(167, 80);
+            this.DersiSil.TabIndex = 20;
+            this.DersiSil.Text = "Dersi Sil";
+            this.DersiSil.UseVisualStyleBackColor = false;
+            this.DersiSil.Click += new System.EventHandler(this.DersiSil_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pictureBox5.BackgroundImage = global::YoklamaOtomasyonu.Properties.Resources.school;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox5.Location = new System.Drawing.Point(562, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(422, 561);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 18;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox3.BackgroundImage = global::YoklamaOtomasyonu.Properties.Resources._lock;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(87, 311);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(49, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
             // 
             // parolasett
             // 
             this.parolasett.BackgroundImage = global::YoklamaOtomasyonu.Properties.Resources.closeeye;
             this.parolasett.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.parolasett.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.parolasett.Location = new System.Drawing.Point(429, 309);
+            this.parolasett.Location = new System.Drawing.Point(471, 311);
             this.parolasett.Name = "parolasett";
             this.parolasett.Size = new System.Drawing.Size(43, 32);
             this.parolasett.TabIndex = 16;
@@ -163,9 +213,9 @@
             this.pictureBox1.BackgroundImage = global::YoklamaOtomasyonu.Properties.Resources.human;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::YoklamaOtomasyonu.Properties.Resources.human;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(514, 160);
+            this.pictureBox1.Size = new System.Drawing.Size(564, 172);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -176,7 +226,7 @@
             this.pictureBox2.BackgroundImage = global::YoklamaOtomasyonu.Properties.Resources.book;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Image = global::YoklamaOtomasyonu.Properties.Resources.book;
-            this.pictureBox2.Location = new System.Drawing.Point(45, 223);
+            this.pictureBox2.Location = new System.Drawing.Point(87, 225);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(49, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -189,46 +239,9 @@
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(514, 561);
+            this.pictureBox4.Size = new System.Drawing.Size(564, 561);
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureBox5.BackgroundImage = global::YoklamaOtomasyonu.Properties.Resources.school;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox5.Location = new System.Drawing.Point(510, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(474, 561);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 18;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBox3.BackgroundImage = global::YoklamaOtomasyonu.Properties.Resources._lock;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(45, 309);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(49, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // OgrenciEkleCikar
-            // 
-            this.OgrenciEkleCikar.BackColor = System.Drawing.Color.OrangeRed;
-            this.OgrenciEkleCikar.ForeColor = System.Drawing.Color.White;
-            this.OgrenciEkleCikar.Location = new System.Drawing.Point(392, 450);
-            this.OgrenciEkleCikar.Name = "OgrenciEkleCikar";
-            this.OgrenciEkleCikar.Size = new System.Drawing.Size(112, 80);
-            this.OgrenciEkleCikar.TabIndex = 19;
-            this.OgrenciEkleCikar.Text = "Öğrenci Ekle/Çıkar";
-            this.OgrenciEkleCikar.UseVisualStyleBackColor = false;
-            this.OgrenciEkleCikar.Click += new System.EventHandler(this.OgrenciEkleCikar_Click);
             // 
             // GirisEkrani
             // 
@@ -236,6 +249,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.DersiSil);
             this.Controls.Add(this.OgrenciEkleCikar);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
@@ -257,11 +271,11 @@
             this.Name = "GirisEkrani";
             this.Text = "Giriş Ekranı";
             this.Load += new System.EventHandler(this.GirisEkrani_load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,6 +298,7 @@
         private System.Windows.Forms.Button YoklamaDurumu;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button OgrenciEkleCikar;
+        private System.Windows.Forms.Button DersiSil;
     }
 }
 

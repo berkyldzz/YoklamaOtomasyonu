@@ -35,6 +35,7 @@
             this.GeriDon = new System.Windows.Forms.Button();
             this.Tablo = new System.Windows.Forms.ListView();
             this.FiltreyiTemizle = new System.Windows.Forms.Button();
+            this.Mail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OgrenciNoFiltre
@@ -42,7 +43,7 @@
             this.OgrenciNoFiltre.AutoSize = true;
             this.OgrenciNoFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.OgrenciNoFiltre.ForeColor = System.Drawing.Color.White;
-            this.OgrenciNoFiltre.Location = new System.Drawing.Point(12, 31);
+            this.OgrenciNoFiltre.Location = new System.Drawing.Point(12, 12);
             this.OgrenciNoFiltre.Name = "OgrenciNoFiltre";
             this.OgrenciNoFiltre.Size = new System.Drawing.Size(181, 21);
             this.OgrenciNoFiltre.TabIndex = 1;
@@ -56,7 +57,7 @@
             this.AdSoyadFiltre.AutoSize = true;
             this.AdSoyadFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AdSoyadFiltre.ForeColor = System.Drawing.Color.White;
-            this.AdSoyadFiltre.Location = new System.Drawing.Point(161, 65);
+            this.AdSoyadFiltre.Location = new System.Drawing.Point(161, 46);
             this.AdSoyadFiltre.Name = "AdSoyadFiltre";
             this.AdSoyadFiltre.Size = new System.Drawing.Size(170, 21);
             this.AdSoyadFiltre.TabIndex = 2;
@@ -70,7 +71,7 @@
             this.DevamsizlikFiltre.AutoSize = true;
             this.DevamsizlikFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DevamsizlikFiltre.ForeColor = System.Drawing.Color.White;
-            this.DevamsizlikFiltre.Location = new System.Drawing.Point(12, 100);
+            this.DevamsizlikFiltre.Location = new System.Drawing.Point(12, 81);
             this.DevamsizlikFiltre.Name = "DevamsizlikFiltre";
             this.DevamsizlikFiltre.Size = new System.Drawing.Size(224, 21);
             this.DevamsizlikFiltre.TabIndex = 2;
@@ -82,7 +83,7 @@
             // panel1
             // 
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(19, 154);
+            this.panel1.Location = new System.Drawing.Point(19, 119);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 225);
             this.panel1.TabIndex = 3;
@@ -103,7 +104,7 @@
             // 
             // Tablo
             // 
-            this.Tablo.BackColor = System.Drawing.Color.Aqua;
+            this.Tablo.BackColor = System.Drawing.Color.BurlyWood;
             this.Tablo.Font = new System.Drawing.Font("Tahoma", 11F);
             this.Tablo.HideSelection = false;
             this.Tablo.Location = new System.Drawing.Point(336, 12);
@@ -119,7 +120,7 @@
             this.FiltreyiTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FiltreyiTemizle.Font = new System.Drawing.Font("Tahoma", 15F);
             this.FiltreyiTemizle.ForeColor = System.Drawing.Color.Wheat;
-            this.FiltreyiTemizle.Location = new System.Drawing.Point(19, 394);
+            this.FiltreyiTemizle.Location = new System.Drawing.Point(19, 363);
             this.FiltreyiTemizle.Name = "FiltreyiTemizle";
             this.FiltreyiTemizle.Size = new System.Drawing.Size(295, 48);
             this.FiltreyiTemizle.TabIndex = 6;
@@ -127,12 +128,27 @@
             this.FiltreyiTemizle.UseVisualStyleBackColor = false;
             this.FiltreyiTemizle.Click += new System.EventHandler(this.FiltreyiTemizle_Click);
             // 
+            // Mail
+            // 
+            this.Mail.BackColor = System.Drawing.Color.DarkMagenta;
+            this.Mail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Mail.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.Mail.ForeColor = System.Drawing.Color.Wheat;
+            this.Mail.Location = new System.Drawing.Point(19, 422);
+            this.Mail.Name = "Mail";
+            this.Mail.Size = new System.Drawing.Size(295, 48);
+            this.Mail.TabIndex = 7;
+            this.Mail.Text = "Öğretmen Bilgilendirme Maili";
+            this.Mail.UseVisualStyleBackColor = false;
+            this.Mail.Click += new System.EventHandler(this.Mail_Click);
+            // 
             // YoklamaDurumu_YoneticiPaneli_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.Mail);
             this.Controls.Add(this.FiltreyiTemizle);
             this.Controls.Add(this.Tablo);
             this.Controls.Add(this.GeriDon);
@@ -142,8 +158,7 @@
             this.Controls.Add(this.OgrenciNoFiltre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "YoklamaDurumu_YoneticiPaneli_";
-            this.Text = "YoklamaDurumu_YoneticiPaneli_";
-            this.Load += new System.EventHandler(this.OgrencileriGetir);
+            this.Text = "W";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,7 +170,8 @@
         private System.Windows.Forms.RadioButton DevamsizlikFiltre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button GeriDon;
-        private System.Windows.Forms.ListView Tablo;
         private System.Windows.Forms.Button FiltreyiTemizle;
+        public System.Windows.Forms.ListView Tablo;
+        private System.Windows.Forms.Button Mail;
     }
 }

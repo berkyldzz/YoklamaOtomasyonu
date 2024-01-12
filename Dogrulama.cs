@@ -55,6 +55,14 @@ namespace YoklamaOtomasyonu
 
                 if (oku.Read())
                 {
+                    string katilanlarString = string.Join("','", YoklamaEkrani.katilanlar);
+
+                    OleDbCommand komutt = new OleDbCommand($"UPDATE {GirisEkrani.ders}_ SET Devamsızlık=Devamsızlık+1 WHERE ÖğrenciNo NOT IN ('{katilanlarString}')", veritabani);
+                    komutt.ExecuteNonQuery();
+
+                    OleDbCommand komutttt = new OleDbCommand($"UPDATE {GirisEkrani.ders}_ SET DevamsızlıkTarihleri = DevamsızlıkTarihleri & '#{yoklamaekrani.Tarih.Text}#' WHERE ÖğrenciNo NOT IN ('{katilanlarString}')", veritabani);
+                    komutttt.ExecuteNonQuery();
+
                     this.Hide();
                     yoklamaekrani.Hide();
                     girisekrani.DersleriCek();
@@ -67,6 +75,9 @@ namespace YoklamaOtomasyonu
                     Parola.Clear();
                 }
             }
+
+            
+                
         }
 
     }

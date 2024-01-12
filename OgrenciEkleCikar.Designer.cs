@@ -54,6 +54,7 @@
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.DarkCyan;
+            this.splitter1.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(436, 561);

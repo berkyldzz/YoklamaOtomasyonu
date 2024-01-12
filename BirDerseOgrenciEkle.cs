@@ -33,42 +33,97 @@ namespace YoklamaOtomasyonu
             if (Dersler.Text == "" || AdSoyad.Text == "" || OgrenciNo.Text == "" || GorevliOgretmenParolasi.Text == "")
             {
                 MessageBox.Show("Lütfen Gerekli Yerleri Doğru Şekilde Doldurunuz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GorevliOgretmenParolasi.Clear();
+            }
+            else if ( AdSoyad.Text.Any(char.IsDigit) || !OgrenciNo.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Lütfen Gerekli Yerleri Doğru Şekilde Doldurunuz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GorevliOgretmenParolasi.Clear();
             }
             else
             {
-                string dersadi=Dersler.Text.ToUpper();
+                string dersadi = Dersler.Text;
                 string adsoyad = AdSoyad.Text.Trim().ToUpper();
                 string ogrencino = OgrenciNo.Text;
                 string parola = GorevliOgretmenParolasi.Text;
-                int maxdevamsizlik=0;
+                int maxdevamsizlik;
 
                 try
                 {
+                    if (dersadi == "ÖğrenciBilgileri")
+                    {                   
+                        OleDbCommand komut = new OleDbCommand($"SELECT * FROM YöneticiParolası Where Parola='{parola}'", veritabani);
+                        OleDbDataReader oku = komut.ExecuteReader();
 
-                    OleDbCommand komut = new OleDbCommand($"SELECT * FROM GörevliBilgileri Where Parola='{parola}' and DersAdı='{dersadi}'", veritabani);
-                    OleDbDataReader oku = komut.ExecuteReader();
+                        if (oku.Read())
+                        {
+                            OleDbCommand kontrolKomut = new OleDbCommand($"SELECT COUNT(*) FROM ÖğrenciBilgileri WHERE ÖğrenciNo='{ogrencino}'", veritabani);
+                            int kayitSayisi = Convert.ToInt32(kontrolKomut.ExecuteScalar());
 
-                    OleDbCommand komuttt = new OleDbCommand($"SELECT MaxDevamsızlık FROM {dersadi + "_"}", veritabani);
-                    OleDbDataReader okuu = komuttt.ExecuteReader();
-                    if (okuu.Read())
-                    {
-                        maxdevamsizlik = Convert.ToInt32(okuu["MaxDevamsızlık"]);
-                    }
-                    if (oku.Read())
-                    {
-                        OleDbCommand komutt = new OleDbCommand($"INSERT INTO {dersadi+"_"} (AdSoyad, ÖğrenciNo, Mail, Devamsızlık, MaxDevamsızlık) VALUES ('{adsoyad}', '{ogrencino}', '{ogrencino+"@firat.edu.tr"}', 0, {maxdevamsizlik})",veritabani);
-                        komutt.ExecuteNonQuery();
-                        
-                        MessageBox.Show("Öğrenci Ekleme Başarılı !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (kayitSayisi == 0)
+                            {
+                                OleDbCommand komuttt = new OleDbCommand($"INSERT INTO ÖğrenciBilgileri (AdSoyad, ÖğrenciNo, Mail, Devamsızlık) VALUES ('{adsoyad}', '{ogrencino}', '{ogrencino + "@firat.edu.tr"}', 0)", veritabani);
+                                komuttt.ExecuteNonQuery();
+
+                                MessageBox.Show($"Öğrenci Bilgilerine {adsoyad} Eklendi !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                OgrenciNo.Clear();
+                                AdSoyad.Clear();
+                                GorevliOgretmenParolasi.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Bu Öğrenci Öğrenci Bilgilerinde Mevcut!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                GorevliOgretmenParolasi.Clear();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Parola Yanlış Tekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            GorevliOgretmenParolasi.Clear();
+                        }
                     }
                     else
-                    {
-                        MessageBox.Show("Parola Yanlış Tekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    {                        
+                        OleDbCommand komutt = new OleDbCommand($"SELECT * FROM GörevliBilgileri Where Parola='{parola}' and DersAdı='{dersadi}'", veritabani);
+                        OleDbDataReader okuu = komutt.ExecuteReader();
+
+                        if (okuu.Read())
+                        {
+                            OleDbCommand kontrolKomut = new OleDbCommand($"SELECT COUNT(*) FROM {dersadi}_ WHERE ÖğrenciNo='{ogrencino}'", veritabani);
+                            int kayitSayisi = Convert.ToInt32(kontrolKomut.ExecuteScalar());
+
+                            if (kayitSayisi == 0)
+                            {
+                                OleDbCommand komuttt = new OleDbCommand($"SELECT MaxDevamsızlık FROM {dersadi}_", veritabani);
+                                maxdevamsizlik = Convert.ToInt32(komuttt.ExecuteScalar());
+
+                                OleDbCommand komutttt = new OleDbCommand($"INSERT INTO {dersadi}_ (AdSoyad, ÖğrenciNo, Mail, Devamsızlık, MaxDevamsızlık) VALUES ('{adsoyad}', '{ogrencino}', '{ogrencino + "@firat.edu.tr"}', 0, {maxdevamsizlik})", veritabani);
+                                komutttt.ExecuteNonQuery();
+
+                                MessageBox.Show($"{dersadi} dersine {adsoyad} Eklendi !", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                OgrenciNo.Clear();
+                                AdSoyad.Clear();
+                                GorevliOgretmenParolasi.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Bu öğrenci zaten {dersadi} dersinde mevcut!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                GorevliOgretmenParolasi.Clear();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Parola Yanlış Tekrar Deneyiniz!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            GorevliOgretmenParolasi.Clear();
+                        }
                     }
+
+                    
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Lütfen Gerekli Yerleri Doğru Şekilde Doldurunuz !");
+                    MessageBox.Show("Lütfen Gerekli Yerleri Doğru Şekilde Doldurunuz !"+ex.ToString());
+                    GorevliOgretmenParolasi.Clear();
                 }
             }
         }
@@ -84,13 +139,29 @@ namespace YoklamaOtomasyonu
 
             foreach (DataRow tablo in VTDersler.Rows)
             {
-                this.ders = tablo["TABLE_NAME"].ToString();
+                ders = tablo["TABLE_NAME"].ToString();
 
-                if (this.ders.EndsWith("_") && !Dersler.Items.Contains(ders.Replace("_", "")))
+                if (ders.EndsWith("_") && !Dersler.Items.Contains(ders.Replace("_", "")))
                 {
-                    Dersler.Items.Add(this.ders.Remove(this.ders.Length - 1));
+                    Dersler.Items.Add(ders.Remove(ders.Length - 1));
+                }
+                if (ders == "ÖğrenciBilgileri" && !Dersler.Items.Contains(ders))
+                {
+                    Dersler.Items.Add(ders);
                 }
 
+            }
+        }
+
+        private void Dersler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Dersler.Text == "ÖğrenciBilgileri")
+            {
+                label4.Text = "Yönetici Parolası";
+            }
+            else
+            {
+                label4.Text = "Görevli Öğretmen Parolası";
             }
         }
     }

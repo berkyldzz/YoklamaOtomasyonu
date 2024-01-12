@@ -41,3 +41,9 @@ E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.FiltreDevamsizli
 E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.BirDerstenOgrenciCikar.resources
 E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.TumDerslereOgrenciEkle.resources
 E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.TumDerslerdenCikar.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.DersSil.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.BilgilendirmeMaili.resources
+E:\Senkron\GitHub\YoklamaOtomasyonu\bin\Debug\YoklamaOtomasyonu.exe.manifest
+E:\Senkron\GitHub\YoklamaOtomasyonu\bin\Debug\YoklamaOtomasyonu.application
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.exe.manifest
+E:\Senkron\GitHub\YoklamaOtomasyonu\obj\Debug\YoklamaOtomasyonu.application

@@ -25,6 +25,36 @@ namespace YoklamaOtomasyonu
             BirDerseEkle.Checked = false;
             BirDerstenCikar.Checked = false;
 
+            if (birderstenogrencicikar != null && birderstenogrencicikar.Visible == true)
+            {
+                birderstenogrencicikar.OgrenciNo.Clear();
+                birderstenogrencicikar.GorevliOgretmenParolasi.Clear();
+                birderstenogrencicikar.Hide();
+            }
+
+            if (birderseogrenciekle != null && birderseogrenciekle.Visible == true)
+            {
+                birderseogrenciekle.AdSoyad.Clear();
+                birderseogrenciekle.OgrenciNo.Clear();
+                birderseogrenciekle.GorevliOgretmenParolasi.Clear();
+                birderseogrenciekle.Hide();
+            }
+
+            if (tumderslereogrenciekle != null && tumderslereogrenciekle.Visible == true)
+            {
+                tumderslereogrenciekle.AdSoyad.Clear();
+                tumderslereogrenciekle.YoneticiParolasi.Clear();
+                tumderslereogrenciekle.OgrenciNo.Clear();
+                tumderslereogrenciekle.Hide();
+            }
+
+            if (tumderslerdencikar != null && tumderslerdencikar.Visible == true)
+            {
+                tumderslerdencikar.OgrenciNo.Clear();
+                tumderslerdencikar.YoneticiParolasi.Clear();
+                tumderslerdencikar.Hide();
+            }
+
             this.Hide();
             girisekrani.Show();
             
@@ -36,16 +66,24 @@ namespace YoklamaOtomasyonu
             
             if(birderstenogrencicikar != null && birderstenogrencicikar.Visible == true)
             {
+                birderstenogrencicikar.Dersler.Text = "";
+                birderstenogrencicikar.OgrenciNo.Clear();
+                birderstenogrencicikar.GorevliOgretmenParolasi.Clear();
                 birderstenogrencicikar.Hide();
             }
 
             if (tumderslereogrenciekle != null && tumderslereogrenciekle.Visible == true)
             {
+                tumderslereogrenciekle.AdSoyad.Clear();
+                tumderslereogrenciekle.YoneticiParolasi.Clear();
+                tumderslereogrenciekle.OgrenciNo.Clear();
                 tumderslereogrenciekle.Hide();
             }
 
             if (tumderslerdencikar != null && tumderslerdencikar.Visible == true)
             {
+                tumderslerdencikar.OgrenciNo.Clear();
+                tumderslerdencikar.YoneticiParolasi.Clear();
                 tumderslerdencikar.Hide();
             }
 
@@ -66,16 +104,25 @@ namespace YoklamaOtomasyonu
 
             if(birderseogrenciekle != null && birderseogrenciekle.Visible == true)
             {
+                birderseogrenciekle.AdSoyad.Clear();
+                birderseogrenciekle.OgrenciNo.Clear();
+                birderseogrenciekle.Dersler.Text = "";
+                birderseogrenciekle.GorevliOgretmenParolasi.Clear();
                 birderseogrenciekle.Hide();
             }
 
             if (tumderslereogrenciekle != null && tumderslereogrenciekle.Visible == true)
             {
+                tumderslereogrenciekle.AdSoyad.Clear();
+                tumderslereogrenciekle.YoneticiParolasi.Clear();
+                tumderslereogrenciekle.OgrenciNo.Clear();
                 tumderslereogrenciekle.Hide();
             }
-           
+
             if (tumderslerdencikar != null && tumderslerdencikar.Visible == true)
             {
+                tumderslerdencikar.OgrenciNo.Clear();
+                tumderslerdencikar.YoneticiParolasi.Clear();
                 tumderslerdencikar.Hide();
             }
 
@@ -94,18 +141,27 @@ namespace YoklamaOtomasyonu
         {
             tumderslereogrenciekle = Application.OpenForms.OfType<TumDerslereOgrenciEkle>().FirstOrDefault();
 
-            if(birderseogrenciekle != null && birderseogrenciekle.Visible == true)
+            if (birderseogrenciekle != null && birderseogrenciekle.Visible == true)
             {
+                birderseogrenciekle.AdSoyad.Clear();
+                birderseogrenciekle.OgrenciNo.Clear();
+                birderseogrenciekle.Dersler.Text = "";
+                birderseogrenciekle.GorevliOgretmenParolasi.Clear();
                 birderseogrenciekle.Hide();
             }
 
             if (birderstenogrencicikar != null && birderstenogrencicikar.Visible == true)
             {
+                birderstenogrencicikar.Dersler.Text = "";
+                birderstenogrencicikar.OgrenciNo.Clear();
+                birderstenogrencicikar.GorevliOgretmenParolasi.Clear();
                 birderstenogrencicikar.Hide();
             }
 
             if (tumderslerdencikar != null && tumderslerdencikar.Visible == true)
             {
+                tumderslerdencikar.OgrenciNo.Clear();
+                tumderslerdencikar.YoneticiParolasi.Clear();
                 tumderslerdencikar.Hide();
             }
 
@@ -126,16 +182,26 @@ namespace YoklamaOtomasyonu
 
             if (birderseogrenciekle != null && birderseogrenciekle.Visible == true)
             {
+                birderseogrenciekle.AdSoyad.Clear();
+                birderseogrenciekle.OgrenciNo.Clear();
+                birderseogrenciekle.Dersler.Text = "";
+                birderseogrenciekle.GorevliOgretmenParolasi.Clear();
                 birderseogrenciekle.Hide();
             }
 
             if (birderstenogrencicikar != null && birderstenogrencicikar.Visible == true)
             {
+                birderstenogrencicikar.Dersler.Text = "";
+                birderstenogrencicikar.OgrenciNo.Clear();
+                birderstenogrencicikar.GorevliOgretmenParolasi.Clear();
                 birderstenogrencicikar.Hide();
             }
 
-            if (tumderslereogrenciekle != null && tumderslereogrenciekle.Visible ==true)
+            if (tumderslereogrenciekle != null && tumderslereogrenciekle.Visible == true)
             {
+                tumderslereogrenciekle.AdSoyad.Clear();
+                tumderslereogrenciekle.YoneticiParolasi.Clear();
+                tumderslereogrenciekle.OgrenciNo.Clear();
                 tumderslereogrenciekle.Hide();
             }
 

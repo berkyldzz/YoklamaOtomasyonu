@@ -39,22 +39,22 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 190);
+            this.label4.Location = new System.Drawing.Point(12, 182);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 58);
+            this.label4.Size = new System.Drawing.Size(100, 72);
             this.label4.TabIndex = 11;
             this.label4.Text = "Görevli Öğretmen Parolası";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 111);
+            this.label3.Location = new System.Drawing.Point(12, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 42);
+            this.label3.Size = new System.Drawing.Size(100, 62);
             this.label3.TabIndex = 12;
             this.label3.Text = "Öğrenci Numarası";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,11 +63,11 @@
             // 
             this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 32);
+            this.label1.Size = new System.Drawing.Size(100, 78);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Ders ";
+            this.label1.Text = "Ders Veya Liste ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OgrenciyiKaydet
@@ -76,7 +76,7 @@
             this.OgrenciyiKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OgrenciyiKaydet.Font = new System.Drawing.Font("Tahoma", 15F);
             this.OgrenciyiKaydet.ForeColor = System.Drawing.Color.White;
-            this.OgrenciyiKaydet.Location = new System.Drawing.Point(123, 277);
+            this.OgrenciyiKaydet.Location = new System.Drawing.Point(116, 277);
             this.OgrenciyiKaydet.Name = "OgrenciyiKaydet";
             this.OgrenciyiKaydet.Size = new System.Drawing.Size(171, 47);
             this.OgrenciyiKaydet.TabIndex = 10;
@@ -91,18 +91,22 @@
             this.GorevliOgretmenParolasi.Name = "GorevliOgretmenParolasi";
             this.GorevliOgretmenParolasi.Size = new System.Drawing.Size(289, 32);
             this.GorevliOgretmenParolasi.TabIndex = 9;
+            this.GorevliOgretmenParolasi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GorevliOgretmenParolasi.UseSystemPasswordChar = true;
             // 
             // OgrenciNo
             // 
             this.OgrenciNo.Font = new System.Drawing.Font("Tahoma", 15F);
             this.OgrenciNo.Location = new System.Drawing.Point(113, 116);
+            this.OgrenciNo.MaxLength = 9;
             this.OgrenciNo.Name = "OgrenciNo";
             this.OgrenciNo.Size = new System.Drawing.Size(289, 32);
             this.OgrenciNo.TabIndex = 8;
+            this.OgrenciNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Dersler
             // 
+            this.Dersler.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Dersler.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Dersler.Font = new System.Drawing.Font("Tahoma", 15F);
             this.Dersler.FormattingEnabled = true;
@@ -110,6 +114,7 @@
             this.Dersler.Name = "Dersler";
             this.Dersler.Size = new System.Drawing.Size(289, 32);
             this.Dersler.TabIndex = 6;
+            this.Dersler.SelectedIndexChanged += new System.EventHandler(this.Dersler_SelectedIndexChanged);
             // 
             // BirDerstenOgrenciCikar
             // 
@@ -139,8 +144,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button OgrenciyiKaydet;
-        private System.Windows.Forms.TextBox GorevliOgretmenParolasi;
-        private System.Windows.Forms.TextBox OgrenciNo;
-        private System.Windows.Forms.ComboBox Dersler;
+        public System.Windows.Forms.TextBox GorevliOgretmenParolasi;
+        public System.Windows.Forms.TextBox OgrenciNo;
+        public System.Windows.Forms.ComboBox Dersler;
     }
 }
